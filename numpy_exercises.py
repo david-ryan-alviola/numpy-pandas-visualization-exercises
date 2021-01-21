@@ -5,7 +5,7 @@
 # 
 # `a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])`
 
-# In[2]:
+# In[83]:
 
 
 import numpy as np
@@ -15,39 +15,39 @@ a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
 
 # ### 1. How many negative numbers are there?
 
-# In[6]:
+# In[84]:
 
 
 negatives = a[a < 0]
-negatives
+len(negatives)
 
 
 # ### 2. How many positive numbers are there?
 
-# In[8]:
+# In[85]:
 
 
 positives = a[a > 0]
-positives
+len(positives)
 
 
 # ### 3. How many even positive numbers are there?
 
-# In[10]:
+# In[87]:
 
 
 even_positives = positives[positives % 2 == 0]
-even_positives
+len(even_positives)
 
 
 # ### 4. If you were to add 3 to each data point, how many positive numbers would there be?
 
-# In[12]:
+# In[88]:
 
 
 add_three = a + 3
 positives = add_three[add_three > 0]
-positives
+len(positives)
 
 
 # ### 5. If you squared each number, what would the new mean and standard deviation be?
@@ -77,7 +77,7 @@ z_scores
 
 # ### 8. Copy the setup and exercise directions from More Numpy Practice into your numpy_exercises.py and add your solutions.
 
-# In[25]:
+# In[89]:
 
 
 import numpy as np
@@ -111,9 +111,7 @@ for num in a:
 print(f"product_of_a:  {product_of_a}")
 
 # Exercise 6 - Make a variable named squares_of_a. It should hold each number in a squared like [1, 4, 9, 16, 25...]
-squares_of_a = []
-for num in a:
-    squares_of_a.append(num ** 2)
+squares_of_a = [n ** 2 for n in a]
     
 print(f"squares_of_a:  {squares_of_a}")
 
@@ -126,7 +124,7 @@ evens_in_a = [num for num in a if num % 2 == 0]
 print(f"evens_in_a:  {evens_in_a}")
 
 
-# In[50]:
+# In[92]:
 
 
 ## What about life in two dimensions? A list of lists is matrix, a table, a spreadsheet, a chessboard...
@@ -174,6 +172,7 @@ print(f"shape of b:  {b.shape}")
 
 # Exercise 10 - transpose the array b.
 print(f"b transposed:  {np.transpose(b)}")
+# can also call transpose and reshape directly on array
 
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
 print(f"b reshaped 1x6:  {np.reshape(b, (1, 6))}")
